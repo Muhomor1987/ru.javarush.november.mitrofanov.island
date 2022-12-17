@@ -18,6 +18,8 @@ public abstract class Animal implements AnimalAction {
     public int coordinate_X;
     public int coordinate_Y;
 
+    String name;
+
 
 
 

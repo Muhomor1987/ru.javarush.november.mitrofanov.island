@@ -29,4 +29,6 @@ public class Squad{
     }
 
     AnimalAction animalAction;
+
+
 }
