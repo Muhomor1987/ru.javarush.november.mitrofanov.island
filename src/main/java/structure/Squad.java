@@ -2,31 +2,31 @@ package structure;
 
 import description.AnimalAction;
 
-public class Squad{
-        public int coordinate_X;
-        public int coordinates_Y;
+public class Squad extends Thread {
+    private final String nameSquad;
+    private final int x_coordinate;
+    private final int y_coordinate;
 
 
-    public Squad(int xCoordinates, int yCoordinates) {
-        this.coordinate_X = xCoordinates;
-        this.coordinates_Y = yCoordinates;
+    public Squad(int x_coordinates, int y_coordinate) {
+        nameSquad = "Squad_"+x_coordinates+"x"+ y_coordinate;
+        this.x_coordinate = x_coordinates;
+        this.y_coordinate = y_coordinate;
     }
 
     public int getCoordinate_X() {
-        return coordinate_X;
+        return x_coordinate;
     }
 
-    public void setCoordinate_X(int coordinate_X) {
-        this.coordinate_X = coordinate_X;
+    public void addToIslandMap(IslandMap islandMap){
+
     }
 
-    public int getCoordinates_Y() {
-        return coordinates_Y;
+
+    public int getY_coordinate() {
+        return y_coordinate;
     }
 
-    public void setCoordinates_Y(int coordinates_Y) {
-        this.coordinates_Y = coordinates_Y;
-    }
 
     AnimalAction animalAction;
 
