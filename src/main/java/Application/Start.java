@@ -1,7 +1,9 @@
 package Application;
 
 import service.CreateIsland;
+import service.CreatorSquad;
 import structure.IslandMap;
+import structure.KindsAnimal;
 
 /**
  * Hello world!
@@ -15,8 +17,18 @@ public class Start
         CreateIsland createIsland = new CreateIsland();
         IslandMap islandMap = new CreateIsland().createIsland();
         //проверка на ноль
-        createIsland.createSquad(islandMap);   //работает в одном потоке
+
+        //!!createIsland.createSquad(islandMap);  //Создаем Карту острова и наполняем её локациями(квадратами)
 
 
+        //Многопоточно это не работает, сама джава лепит в один поток.
+        //либо как то можно разбить задачу на чётные не четные i (но это на подумать)
+        // работает в одном потоке сделать многопоточным
+
+        //создаём очереди у квадратов(локаций)
+        CreatorSquad creatorSquad = new CreatorSquad();
+        KindsAnimal kindsAnimal = new KindsAnimal();
+
+        System.out.println(kindsAnimal);
     }
 }
