@@ -1,19 +1,19 @@
 package unit;
 
-import description.AnimalAction;
-import structure.KindsAnimal;
+import structure.IslandMap;
 
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Animal {
     public Animal(int WEIGHT, int SPEED, int SATURATION,
-                  int MAX_OF_ANIMALS_ON_SQUAD) {
-        this.name=this.getClass().getName()+this.counterFoxForName.getAndDecrement();
+                  int MAX_OF_ANIMALS_ON_SQUAD, IslandMap islandMap) {
+        this.name=this.getClass().getName()+this.counterForName.getAndDecrement();
         this.WEIGHT = WEIGHT;
         this.SPEED = SPEED;
         this.SATURATION = SATURATION;
         this.MAX_OF_ANIMALS_ON_SQUAD = MAX_OF_ANIMALS_ON_SQUAD;
+        this.islandMap= islandMap;
 
     }
 
@@ -28,9 +28,12 @@ public class Animal {
     public int coordinate_X;
     public int coordinate_Y;
 
+    private IslandMap islandMap;
 
 
-    AtomicInteger counterFoxForName = new AtomicInteger(0);
+
+
+    public AtomicInteger counterForName = new AtomicInteger(0);
 
 /*    public void createAnimal(String names,Integer weight, Integer SPEED,
                              Integer SATURATION, Integer MAX_OF_ANIMALS_ON_SQUAD){

@@ -1,9 +1,15 @@
 package Application;
 
 import service.CreateIsland;
+import service.CreatorAnimal;
 import service.CreatorSquad;
 import structure.IslandMap;
 import structure.KindsAnimal;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Hello world!
@@ -30,5 +36,13 @@ public class Start
         KindsAnimal kindsAnimal = new KindsAnimal();
 
         System.out.println(kindsAnimal);
+        CreatorAnimal creatorAnimal = new CreatorAnimal(islandMap);
+
+
+        List<Thread> threadList = new ArrayList<>();
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        executorService.execute(
+                new Thread(CreatorAnimal.CreatorWolf::new));
+
     }
 }

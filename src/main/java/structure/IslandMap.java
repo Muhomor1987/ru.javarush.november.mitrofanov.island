@@ -32,8 +32,17 @@ public class IslandMap extends Thread{
         this.width = width;
         this.height = height;
         listSquad = new Squad[height][width];
+        this.totalCounterSquad = width*height;
     }
-/*
+    public int totalCounterSquad;
+
+    public int getTotalCounterSquad() {
+        return totalCounterSquad;
+    }
+
+    //метод заполняющий количество животных на карте общее
+
+    /*
         AtomicInteger iA = new AtomicInteger(0);
         AtomicInteger jA = new AtomicInteger(0);
     @Override
